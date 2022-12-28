@@ -1,33 +1,68 @@
 class Chronometer {
   constructor() {
-    // ... your code goes here
+
+    this.currentTime = 0;
+    this.intervalId = null;
+    
   }
 
   start(printTimeCallback) {
-    // ... your code goes here
+
+    const canvas = document.getElementById("canvas");
+    this.ctx = canvas.getContext("2d");
+
+    const oneCurrentTime = currentTime ++;
+
+    this.currentTime = currentTime;
+
+    intervalId = setInterval(() => {
+      oneCurrentTime.printTimeCallback()
+      }, 1)
+
+ // ...
+
   }
 
   getMinutes() {
-    // ... your code goes here
+
+    const min = (currentTime / 60);
+    const count = Math.floor(min);
+
+    return min
+    
   }
 
   getSeconds() {
-    // ... your code goes here
+
+    const sec = currentTime - (min * 60)
+
+    return sec
+
   }
 
   computeTwoDigitNumber(value) {
-    // ... your code goes here
+    
+    secString = sec.slice();
+    minString = min.slice();
+
   }
 
   stop() {
-    // ... your code goes here
+
+    clearInterval(this.intervalId);
+    
   }
 
   reset() {
-    // ... your code goes here
+
+    const canvas = document.getElementById("canvas").reset();
+    
+    button.onclick = this.reset;
   }
 
+  
+
   split() {
-    // ... your code goes here
+    
   }
 }
